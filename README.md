@@ -5,7 +5,7 @@
 
 
 ## Introduction
-I created a little application for the Ruby Engineer 30 minute challenge. It's objective is to fetch data from a third party website and return it's data as JSON to the user.
+I created a little application for the Ruby Engineer 30 minute challenge. Its objective is to fetch data from a third party website and return it's data as JSON to the user.
 
 ## Getting Started
 To get started the database must be loaded by using the rake task `rails db:migrate`. Once the schema has been created run the local server with the command `rails s`.

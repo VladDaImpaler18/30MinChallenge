@@ -1,8 +1,8 @@
 class FetchersController < ApplicationController
     def index
-        Fetcher.new("twitter")
-        Fetcher.new("facebook")
-        #Fetcher.new("instagram")
+        Fetcher.new(:service => "twitter")
+        Fetcher.new(:service => "facebook")
+        # Fetcher.new(:service => "instagram")
         render json: Fetcher.getPayload
     end
 end

@@ -11,8 +11,7 @@ describe Fetcher do
         end
         
         it "is invalid without a declared :service" do
-            request = Fetcher.new()
-            expect(request).not_to be_valid
+            expect { Fetcher.new() }.to raise_error(ArgumentError)
         end
 
         it "is invalid if :service isn't a string" do
@@ -22,7 +21,8 @@ describe Fetcher do
 
         it "has an error if :service an invalid service" do
             request = Fetcher.new(:service => "badLocation")
-            expect(request).to raise_error
+            expect(request.errors).to have_key(:payload)
+            expect(request.errors[:payload].to_s).to match(/JSON ParseError -- 767: unexpected token/)
         end
 
     end
